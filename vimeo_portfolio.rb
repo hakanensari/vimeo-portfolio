@@ -17,8 +17,6 @@ end
 
 get '/' do
   if params[:user]
-    response['Cache-Control'] = 'public, max-age=3600'
-
     hsh = Vimeo::Simple::User.info(params[:user])
     unless hsh.has_key?('error')
       @user = User.new(hsh)
