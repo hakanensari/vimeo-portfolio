@@ -104,21 +104,5 @@ $(function() {
         href                : "http://vimeo.com/moogaloop.swf?autoplay=1&show_portrait=0&show_byline=0&show_title=0&clip_id=" + video_id
       });
     });
-
-    // Embed video on video page.
-    $("#video #file").each(function() {
-      var video_id = this.href.replace(/.*\/([^\/]+$)/, "$1")
-      $so = $("<div id='#file' />")
-        .flash({
-          swf: "http://vimeo.com/moogaloop.swf?autoplay=0&show_portrait=0&show_byline=0&show_title=0&clip_id=" + video_id,
-          params: {
-            allowscriptaccess: 'always',
-            allowfullscreen: 'true'
-          },
-          height: videoData[video_id].height,
-          width: videoData[video_id].width
-        });
-      $(this).replaceWith($so);
-    })
   });
 });
